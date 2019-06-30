@@ -23,3 +23,13 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
 
 //Routes
+
+//A GET route for scraping the New York Times website
+app.get("/scrape", function(req, res) {
+//Grab the body of the html with axios
+axios.get("https://www.nytimes.com/").then(function(response) {
+//Load into Cheerio and save it to $ for a selector
+var $ = cheerio.load(response.data);
+
+});
+});
