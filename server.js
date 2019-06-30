@@ -31,5 +31,20 @@ axios.get("https://www.nytimes.com/").then(function(response) {
 //Load into Cheerio and save it to $ for a selector
 var $ = cheerio.load(response.data);
 
+//Grab every h2 within an article tag, and do the following:
+$("article h2").each(function(response){
+  //Save an empty result object
+  var result = {};
+
+  //Add the text and href of every link, and save them as properties of the result object
+  result.title = $(this)
+  .children("a")
+  .text();
+  result.link = $(this)
+  .children("a")
+  .attr("href");
+
+  //
+});
 });
 });
