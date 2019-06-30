@@ -1,16 +1,25 @@
-//var requires
+//Var Requires
 var express = require ("express");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var axios = require ("axios");
 
-//var cheerio
+//Var Cheerio
 var cheerio = ("cheerio");
 var db = ("./models");
 
-//port 3000
+//Port 3000
 var PORT = 3000;
 
-//initialize express
+//Initialize express
 var app = express ();
 
+app.use(logger("dev"));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(express.static("public"));
+
+//Connect to Mongo DB
+mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+
+//Routes
