@@ -8,6 +8,9 @@ var axios = require ("axios");
 var cheerio = ("cheerio");
 var db = ("./models");
 
-//port express
+//port 3000
 var PORT = 3000;
+
+//initialize express
 var app = express ();
+
