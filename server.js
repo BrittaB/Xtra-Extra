@@ -76,5 +76,6 @@ db.Article.find({})
 
 //Route for grabbing a specific Article by id, populate it with it's note
 app.get("/articles/:id", function(req,res){
-  //
-})
+  //Prepare a query that finds the matching one in our db
+  
+});
